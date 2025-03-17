@@ -1,0 +1,341 @@
+1.-Compra de artículos, Si el artículo comprado es menor a 3 Pagar en efectivo, 
+caso contrario pagar con tarjeta.
+R// Algoritmo compra_de_articulos
+	escribir  "Articulos comprados"
+	Leer articulo; 
+	si articulos < 3 entonces; 
+		Escribir  "pagar en efectivo"
+	sino 
+		Escribir "pagar con tarjeta"
+	FinSi
+FinAlgoritmo
+
+2.-Desarrolle un algoritmo que permita leer tres valores y almacenarlos en las
+variables num1,num2, num3 respectivamente. El algoritmo debe imprimir cual es 
+el mayor. Recuerde constatar que los tres valores introducidos por el teclado 
+sean valores distintos
+R// PROCESO MayorNumero
+	Definir num1, num2, num3 Como Entero
+	num1<-0
+	num2<-0
+	num3<-0 
+	Escribir "primer numero"
+	leer num1;
+	escribir "segundo numero"
+	leer num2;
+	escribir "tercer numero"
+	leer num3;
+	Escribir "el numero mayor es" 
+	si num1 < num2 Entonces; 
+		Escribir "el numero mayor es" num1
+		si num1 < num3 Entonces
+			escribir "el numero mayor es" num1
+		sino 
+			si num2 < num1 Entonces;
+				escribir "el numero mayor es" num2
+				si num2 < num3 Entonces;
+					escribir "el numero mayor es" num2
+				sino 
+					si num3 < num1 Entonces;
+						Escribir "el numero mayor es" num3
+						si num3 < num2 Entonces
+							escribir "el numero mayor es" num3
+						FinSi
+					FinSi
+
+3.- Ingresar por teclado 3 números enteros y mostrar el menor de los 3 números ingresados y la suma de
+dichos números.
+R// PROCESO Suma_enteros
+	Definir num1, num2, num3 Como Entero
+	num1<-0
+	num2<-0
+	num3<-0 
+	Escribir "primer numero"
+	leer num1;
+	escribir "segundo numero"
+	leer num2;
+	escribir "tercer numero"
+	leer num3;
+	suma <- num1 + num2+ num3;
+	si num1 < num2 & num1<num3 Entonces;
+		Escribir "el numero menor es" num1 
+		Escribir "el resultado de la suma es" suma
+	SiNo
+		si num2 < num1 & num2 < num3 entonces;
+			Escribir "el numero menor es" num2
+			Escribir "el resultado de la suma es" suma
+		sino
+			si num3 < num1 & num3 < num2 Entonces
+				Escribir "el numero menor es" num3
+				Escribir "el resultado de la suma es" suma
+				
+			FinSi
+		FinSi
+	FinSi
+FinProceso
+
+4.-A un trabajador le pagan según sus horas trabajadas por una tarifa de pago por hora. si la cantidad de
+horas trabajadas es mayor a 40 horas. la tarifa se incrementa en un 50% para las horas extras. calcular el
+salario del trabajador dadas las horas trabajadas y la tarifa
+R// Algoritmo pago
+	Escribir "digite el nombre del empleado"
+	leer e; 
+	Escribir "ingrese horas trabajadas"
+	Leer horas_trabajadas;
+	Escribir  "tarifa por hora"
+	Leer tarifa; 
+	si horas_trabajadas <= 40 Entonces
+		salario <- horas_trabajadas*tarifa
+		escribir "salario normal" salario
+	SiNo
+		tarifa_extra <- tarifa +0.50 *tarifa 
+		horas_extras <- horas_trabajadas-40
+		Escribir "horas extras trabajadas" horas_extras
+		salario <- horas_extras * tarifa_extra + 40* tarifa
+	FinSi
+	Escribir "valor de la tarifa extra" tarifa_extra
+	Escribir salario
+FinAlgoritmo
+
+5.- Ingresar por teclado dos valores numéricos y mostrar cual es el mayor o si son iguales, mostrar el
+residuo de la división de dichos números.
+R// Algoritmo valoresNum
+	Escribir "valor numerico"
+	Leer num1
+	Escribir "valor numerico"
+	leer num2
+	Escribir "el valor es mayor o es igual"
+	si num1 < num2 Entonces;  
+		escribir "el valor numerico es mayor" num1
+	sino 
+		si num2 < num1 entonces; 
+			escribir "el valor numerico es mayor" num2
+		SiNo
+			Escribir "los numeros son iguales"
+		FinSi
+	FinSi
+	res <- num1%num2
+	Escribir "el residuo de la division es" res
+FinAlgoritmo
+
+6.- Pedir el valor de un producto y mostrar cuanto valdría si se rebaja un 15% su precio
+R//Algoritmo PrecioOriginalPrecioConDescuento
+	Escribir "nombre del producto"
+	Leer producto;
+	escribir "ingresar precio del producto"
+	Leer precio;
+	precio_con_descuento <- precio - precio * 0.15
+		Escribir "precio con descuento" precio_con_descuento
+	FinAlgoritmo
+
+7.-Hacer un algoritmo que calcule el total a pagar por la compra de camisas. Si se compran tres camisas
+o más se aplica un descuento del 20% sobre el total de la compra y si son menos de tres camisas un
+descuento del 10%
+R// Algoritmo total_a_pagar
+	Definir cantidad_de_camisas Como Entero
+	Definir precio_camisas, total_sindescuento, totalcon_descuento Como Real
+	Escribir "Cantidad de camisas"
+	Leer cantidad_de_camisas
+	Escribir "precio de camisa"
+	leer precio_camisas
+	total_sindescuento = precio_camisas*cantidad_de_camisas
+	si cantidad_de_camisas <= 3 Entonces
+		totalcon_descuentodescuento=total_sindescuento *0.80 
+		//aplica el 20%//
+		SiNo
+		si cantidad_de_camisas > 3 entonces
+			totalcon_descuento = total_sindescuento* 0.90 
+			//aplica el 10%//
+	FinSi
+FinSi
+Escribir "el valor a pagar es" totalcon_descuento
+FinAlgoritmo
+
+8.- A un trabajador le descuentan de su sueldo el 10%, si su sueldo es menor o igual a 1000. por encima
+de 1000 y hasta 2000 el 5% del adicional, y por encima de 2000 el 3% del adicional. calcular el descuento
+y sueldo neto que recibe el trabajador dado su sueldo
+R//Proceso CalcularDescuentoSueldo
+		Definir sueldo, descuento, sueldoNeto Como Real;
+		Escribir "Ingrese el sueldo del trabajador: ";
+		Leer sueldo;
+		Si sueldo <= 1000 Entonces
+			descuento = sueldo * 0.10;
+		Sino
+			Si sueldo > 1000 Y sueldo <= 2000 Entonces
+				descuento = 100 + (sueldo - 1000) * 0.05;
+			Sino
+				descuento = 100 + 50 + (sueldo - 2000) * 0.03;
+			FinSi
+		FinSi
+		sueldoNeto = sueldo - descuento;
+				Escribir "El descuento es: ", descuento;
+		Escribir "El sueldo neto es: ", sueldoNeto;
+FinProceso
+
+9.-Determinar si un alumno aprueba o reprueba un curso, sabiendo que aprobara si su promedio de
+cinco calificaciones es mayor o igual a 13; reprueba en caso contrario.
+R// algoritmo promedio_notas
+	Definir nota1 Como Real
+	Definir nota2 Como Real
+	Definir nota3 Como Real
+	Definir nota4 Como Real
+	definir nota5 Como Real
+	Definir promedio Como Real
+	Escribir "Nombre del estudiante"
+	Leer nombre_del_estudiante
+	Escribir "Curso en el que esta el estudiante"
+	Leer Curso_en_el_que_esta_el_estudiante
+	escribir "Primera nota" nota1
+	leer nota1
+	Escribir "Segunda nota" nota2
+	leer nota2
+	Escribir "Tercera nota" nota3
+	Leer nota3
+	Escribir "Cuarta nota" nota4
+	leer nota4
+	Escribir "Quinta nota" nota5
+	leer nota5
+	Escribir resultado del promedio
+	Escribir nota1+ nota2 + nota3 + nota4 + nota5/5 promedio
+	si promedio <= 13 Entonces 
+		Escribir "aprueba"
+	SiNo
+		si promedio > 13 Entonces
+			Escribir "reprueba"
+		FinSi
+	FinSi
+FinAlgoritmo
+
+10.- Dado un tiempo en segundos, calcular los segundos restantes que le
+correspondan para convertirse exactamente en minutos
+R//Algoritmo tiempo
+	Definir tiempo_en_segundos  Como Real
+	definir segundos_restantes Como Real
+	Escribir " ingresa el tiempo en segundos"
+	leer tiempo_en_segundos
+	segundos_restantes = tiempo_en_segundos %60
+	Escribir "los segundos restastes que restan para convertirse en minutos son" segundos_restantes
+	FinAlgoritmo
+
+11.- Una distribuidora de motocicletas tiene una promoción de fin de año que consiste en lo siguiente.
+Las motos marca Honda tienen un descuento del 5%, las marcas Yamaha del 8% y las Suzuki del 10%, las
+otras marcas 2%. Se debe mostrar el precio de la moto, el descuento y el precio a pagar.
+R// algoritmo motos_del_caribe
+	Definir precio_moto Como Real
+	Definir precio_a_pagar Como Real
+	definir descuento Como Real
+	Escribir "Distribuidora motos del caribe"
+	Escribir "nombre del comprador"
+	leer nombre_del_comprador
+	Escribir "Marca de la moto"
+	leer marca_de_la_moto
+	escribir "valor moto"
+	leer valor_moto
+	si marca_de_la_moto = "Honda" Entonces
+		descuento = valor_moto  * 0.05 //descuento del 5%
+	SiNo
+		si marca_de_la_moto = "Yamaha" Entonces
+		descuento = valor_moto *0.08 // descuento del 8%
+		SiNo
+			si marca_de_la_moto = "Suzuki" Entonces
+				descuento = valor_moto *0.10// descuentodel 10%
+			SiNo
+			descuento = valor_moto *0.02// Otras marcas
+			FinSi
+		FinSi
+	FinSi
+	precio_a_pagar = valor_moto - descuento 
+	escribir "precio a pagar" precio_a_pagar
+	Escribir " Descuento aplicado" descuento
+	FinAlgoritmo
+
+12.- Pedir un valor numérico e indicar si es par o no es par
+R// algoritmo parOimpar
+	Definir I Como Real
+	Escribir "escribir numero"
+	leer I
+	si I es par Entonces
+		Escribir "el numero es par"
+	sino 
+		si I es impar entonces 
+			escribir "el numero es impar" 
+		FinSi
+	FinSi
+FinAlgoritmo
+
+13.- Un cliente va a comprar una moto y se percata que si lo compraba el día martes tiene un descuento
+del 12%, luego si lo compra el día sábado tiene un descuento del 18% y si es feriado un 25%, mostrar
+cuanto pagara en cada opción.
+R// algoritmo Descuentos_por_dias 
+	Definir valor_moto Como Real
+	Definir descuento Como Real
+	Definir precio_a_pagar Como Real
+	Escribir "nombre del cliente"
+	leer nombre_del_cliente
+	escribir "marca de moto"
+	leer marca_de_moto
+	Escribir "valor moto"
+	Leer valor_moto
+	Escribir "dia de la semana en que se compra la moto"
+	leer dia_de_la_semana_en_que_se_compra_la_moto
+	si dia_de_la_semana_en_que_se_compra_la_moto = "martes" Entonces
+		descuento = valor_moto * 0.12 // se le aplica un 12% de descuentopor haberla comprado el dia martes 
+	sino 
+		si dia_de_la_semana_en_que_se_compra_la_moto = "sabado" Entonces
+			descuento = valor_moto * 0.18 // se le aplica un 12% de descuentopor haberla comprado el dia sabado
+		sino 
+			si dia_de_la_semana_en_que_se_compra_la_moto = "feriado" Entonces
+				descuento = valor_moto* 0.25 //  se le aplica un 12% de descuentopor haberla comprado el dia sabado
+			FinSi
+		FinSi
+	FinSi
+	precio_a_pagar = valor_moto- descuento
+	Escribir "precio a pagar" precio_a_pagar
+	Escribir "descuento que se le aplico por dia de compra" descuento
+FinAlgoritmo
+
+14.- Crear un algoritmo que muestre el nombre del cliente y la compra de llantas, si la cantidad de
+llantas comprados es menor de 12, al precio de las llantas compradas se le hará un descuento del 20%,
+sabiendo que el costo de la llanta es 250 soles por unidad, y si el número de llantas compradas es mayor
+de 12, el precio de llanta se reduce a 220 por unidad y el descuento será de 25%.
+algoritmo llantas_al_mayor
+	definir nombre_del_cliente como cadena
+	Definir llantas_compradas Como Real
+	Definir precio_unitario Como Real
+	Definir descuento Como Real
+	definir precio_a_pagar Como Real
+	escribir "nombre del cliente"
+	leer nombre_del_cliente
+	Escribir "llantas compradas" llantas_compradas
+	Leer llantas_compradas
+	si llantas_compradas > 12 entonces 
+		precio_unitario = 250 
+		descuento = 0.20 
+	SiNo
+		si llantas_compradas < 12 Entonces
+			precio_unitario = 220
+			descuento = 0.25
+		FinSi
+		FinSi
+	precio_a_pagar = precio_unitario - descuento 
+	escribir "nombre del cliente" nombre_del_cliente
+	escribir "llantas compradas" llantas_compradas
+	escribir "precio a pagar" precio_a_pagar
+	escribir "el descuento aplicado es de" descuento * 100 "%"
+	FinAlgoritmo
+
+15.- Calcular el nuevo salario de un obrero, si obtuvo un incremento semestral del 25% sobre su salario
+anterior, y mostrar el total cobrado de los mese con el nuevo salario, si solo trabajo 10 meses.
+R// Algoritmo salrio_obrero
+	Definir salario_anterior Como Real
+	definir nuevo_salario Como Real
+	definir cobro_salario_meses_anteriores Como real
+	Escribir "nombre obrero"
+	leer nombre_obrero
+	escribir " salario anterior del obrero"
+	Leer salario_anterior
+	nuevo_salario = salario_anterior *1.25
+	cobro_salario_meses_anteriores = nuevo_salario *10
+	Escribir "nuevo salario" nuevo_salario
+	Escribir "cobro salario meses anteriores por 10 meses" cobro_salario_meses_anteriores
+FinAlgoritmo
